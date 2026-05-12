@@ -35,7 +35,7 @@ def get_gbp_conversion(ticker, local_val, fx_row, is_entry=True):
 
 # --- 2. CALCULATION ENGINE ---
 @st.cache_data(ttl=3600)
-def calculate_period_leaderboard(period_key, start, end, portfolios):
+def calculate_period_leaderboard(period_key, start, end,_portfolios):
     # Get all tickers plus FX pairs
     stock_tickers = list(set(tk for p in portfolios.values() for tk in p))
     fx_tickers = ["GBPUSD=X", "GBPEUR=X"]
