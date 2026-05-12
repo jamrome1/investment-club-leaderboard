@@ -5,7 +5,7 @@ from datetime import date
 
 # --- 1. SETTINGS & DATA ---
 PERIODS = {
-    "Meeting 1 to 2": {"start": "2025-01-06", "end": "2025-09-06"},
+    "Meeting 1 to 2": {"start": "2025-01-06", "end": "2025-09-05"},
     "Meeting 2 to 3": {"start": "2025-09-08", "end": None}
 }
 # Pulling data from st.secrets
@@ -34,7 +34,7 @@ def get_gbp_conversion(ticker, local_val, fx_row, is_entry=True):
 
 
 # --- 2. CALCULATION ENGINE ---
-@st.cache_data(ttl=3600)
+@st.cache_data(ttl=86400)
 def calculate_period_leaderboard(period_key, start, end,_portfolios):
     # Get all tickers plus FX pairs
     stock_tickers = list(set(tk for p in _portfolios.values() for tk in p))
