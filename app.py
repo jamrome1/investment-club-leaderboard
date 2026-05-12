@@ -87,9 +87,9 @@ def calculate_period_leaderboard(period_key, start, end, portfolios):
     return df
 
 # Perform calculations before rendering tabs
-p1_data = calculate_period_leaderboard("Meeting_1", PERIODS["Meeting_1_to_2"]["start"], PERIODS["Meeting_1_to_2"]["end"], PORTFOLIO_MAP["Meeting_1_to_2"])
+p1_data = calculate_period_leaderboard("Meeting_1", PERIODS["Meeting 1 to 2"]["start"], PERIODS["Meeting 1 to 2"]["end"], PORTFOLIO_MAP["Meeting_1_to_2"])
 
-p2_data = calculate_period_leaderboard("Meeting_2", PERIODS["Meeting_2_to_3"]["start"], PERIODS["Meeting_2_to_3"]["end"], PORTFOLIO_MAP["Meeting_2_to_3"])
+p2_data = calculate_period_leaderboard("Meeting_2", PERIODS["Meeting 2 to 3"]["start"], PERIODS["Meeting 2 to 3"]["end"], PORTFOLIO_MAP["Meeting_2_to_3"])
 
 
 # --- 3. TOTAL JOURNEY LOGIC ---
