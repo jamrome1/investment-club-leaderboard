@@ -37,7 +37,7 @@ def get_gbp_conversion(ticker, local_val, fx_row, is_entry=True):
 @st.cache_data(ttl=3600)
 def calculate_period_leaderboard(period_key, start, end,_portfolios):
     # Get all tickers plus FX pairs
-    stock_tickers = list(set(tk for p in portfolios.values() for tk in p))
+    stock_tickers = list(set(tk for p in _portfolios.values() for tk in p))
     fx_tickers = ["GBPUSD=X", "GBPEUR=X"]
 
     data = yf.download(stock_tickers + fx_tickers, start=start, end=end, auto_adjust=True)["Open"]
@@ -55,7 +55,7 @@ def calculate_period_leaderboard(period_key, start, end,_portfolios):
     period_purchase_prices = PURCHASE_PRICES[period_key]
 
     results = []
-    for friend, holdings in portfolios.items():
+    for friend, holdings in _portfolios.items():
         total_invested_gbp = 0
         current_value_gbp = 0
         
