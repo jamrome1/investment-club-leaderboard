@@ -40,7 +40,7 @@ def calculate_period_leaderboard(period_key, start, end,_portfolios):
     stock_tickers = list(set(tk for p in _portfolios.values() for tk in p))
     fx_tickers = ["GBPUSD=X", "GBPEUR=X"]
 
-    data = yf.download(stock_tickers + fx_tickers, start=start, end=end, auto_adjust=True)["Open"]
+    data = yf.download(stock_tickers + fx_tickers, start=start, end=end, auto_adjust=True)["Close"]
     data = data.dropna(how='any')
     
     if data.empty:
